@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background-color: white;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "header"
+            "nav"
+    "section"
+            "footer";
+}
+
+header {
+    grid-area: header;
+    background-color: #e99295;
+    padding: 0 2%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+h1 {
+    color: white;
+    text-shadow: 6px 6px 6px rgba(0,0,0,0.2);
+}
+
+nav {
+    grid-area: nav;
+}
+
+.section-container {
+    grid-area: section;
+    display: inline-grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: start;
+    grid-gap: 20px;
+
+}
+
+#todoform {
+    grid-column: 1/2;
+}
+
+#todo-list {
+    grid-column: 2/3;
+}
+
+footer {
+    position: absolute;
+    bottom:0;
+    width:100%;
+    grid-area: footer;
+    background-color: #e99295;
+    padding: 0 2%;
+    display: flex;
+    justify-content: flex-end;
+}
