@@ -25,7 +25,13 @@
                       v-model="newTodoName"
             ></textarea><br>
 
-            <label for="new-todo-date">When do you want to be finished? </label><input type="date" id="new-todo-date"> <br>
+            <label for="new-todo-date">When do you want to be finished? </label>
+            <input type="date"
+                   id="new-todo-date"
+                   v-model="newTodoDate"
+
+            > <br>
+
             <button id="submit" @click.prevent="addNewTodo">Submit</button>
         </form>
 
@@ -37,6 +43,9 @@
                         v-for="(todo, index) in todos"
                         :key="todo.id"
                         :name="todo.name"
+                        :date="todo.date"
+                        :complete="todo.complete"
+                        @completed="todo.complete = true"
                         @remove="todos.splice(index, 1)"
                 ></li>
             </ul>
