@@ -1,7 +1,7 @@
 Vue.component('todo-item', {
     template: `
-        <li>{{ name }}
-        <button @click="$emit('remove')">Done!</button>
+        <li>
+        <button @click="$emit('remove')">✔️</button>  {{ name }}
         </li>
         `,
     props: ['name']

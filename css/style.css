@@ -48,11 +48,6 @@ h1 {
     border-radius: 10px;
     box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3)
 }
-
-input {
-    font-family: 'Montserrat', sans-serif;
-}
-
 textarea {
     font-family: 'Montserrat', sans-serif;
     width:99%;
@@ -60,6 +55,21 @@ textarea {
     max-height:40%;
     resize:vertical;
 }
+#new-todo-date {
+    font-family: 'Montserrat', sans-serif;
+}
+
+#new-todo-date:hover {
+    cursor: pointer;
+}
+
+
+#submit {
+    font-family: 'Montserrat', sans-serif;
+    padding: 6px 10px;
+}
+
+
 
 #todo-list {
     flex: 50%;
@@ -67,6 +77,30 @@ textarea {
     padding: 0 15px 15px;
     border-radius: 10px;
     box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3)
+}
+
+ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+li {
+    line-height: 1.8;
+}
+
+button {
+    font: 400 15px 'Montserrat';
+    background-color: #e99295;
+    color: white;
+    padding: 3px 6px;
+    border-style: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #cd8083;
+
 }
 
 footer {

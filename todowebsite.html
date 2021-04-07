@@ -26,7 +26,7 @@
             ></textarea><br>
 
             <label for="new-todo-date">When do you want to be finished? </label><input type="date" id="new-todo-date"> <br>
-            <input type="submit" value="Submit" @click.prevent="addNewTodo">
+            <button id="submit" @click.prevent="addNewTodo">Submit</button>
         </form>
 
         <div id="todo-list">
