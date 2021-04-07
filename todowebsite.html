@@ -14,24 +14,31 @@
         <h1>Good morning, here are your to dos for today</h1>
     </header>
 
-    <!-- Will there be need for a nav...? -->
-    <nav>
-    </nav>
-
-
     <!--    main-->
     <section class="section-container">
         <form id="todo-form">
             <h2>Enter a new to do item</h2>
-            <label for="new-todo">Your new to do item: </label><textarea id="new-todo" placeholder="New to do"></textarea><br>
+
+            <label for="new-todo-name">Your new to do item: </label>
+            <textarea id="new-todo-name"
+                      placeholder="New to do"
+                      v-model="newTodoName"
+            ></textarea><br>
+
             <label for="new-todo-date">When do you want to be finished? </label><input type="date" id="new-todo-date"> <br>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" @click.prevent="addNewTodo">
         </form>
 
         <div id="todo-list">
             <h2>Your to do items for today</h2>
             <ul>
-                <li>rfhu4erfhu</li>
+                <li
+                        is="todo-item"
+                        v-for="(todo, index) in todos"
+                        :key="todo.id"
+                        :name="todo.name"
+                        @remove="todos.splice(index, 1)"
+                ></li>
             </ul>
         </div>
 

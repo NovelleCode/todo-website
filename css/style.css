@@ -14,9 +14,8 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas: "header"
-            "nav"
-            "section"
-            "footer";
+                        "section"
+                        "footer";
 }
 
 header {
@@ -32,9 +31,6 @@ h1 {
     text-shadow: 6px 6px 6px rgba(0,0,0,0.2);
 }
 
-nav {
-    grid-area: nav;
-}
 
 .section-container {
     grid-area: section;
@@ -48,7 +44,7 @@ nav {
 #todo-form {
     flex: 50%;
     max-width: 48%;
-    padding: 5px 15px 15px;
+    padding: 0 15px 15px;
     border-radius: 10px;
     box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3)
 }
@@ -68,8 +64,7 @@ textarea {
 #todo-list {
     flex: 50%;
     max-width: 48%;
-    margin: 0;
-    padding: 5px 15px;
+    padding: 0 15px 15px;
     border-radius: 10px;
     box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3)
 }
