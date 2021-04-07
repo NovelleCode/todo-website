@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <title>Veckomeny</title>
+    <title>To do list</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
 </head>
 <body>
 <div class="grid-container">
@@ -15,21 +16,25 @@
 
     <!-- Will there be need for a nav...? -->
     <nav>
-
     </nav>
 
 
     <!--    main-->
     <section class="section-container">
         <form id="todo-form">
-            <label for="new-todo">Your new to do item: </label><input type="text" id="new-todo" placeholder="New to do">
-            <input type="date">
+            <h2>Enter a new to do item</h2>
+            <label for="new-todo">Your new to do item: </label><textarea id="new-todo" placeholder="New to do"></textarea><br>
+            <label for="new-todo-date">When should the to do item be finished? </label><input type="date" id="new-todo-date">
+            <input type="submit" value="Submit">
         </form>
 
-        <ul id="todo-list">
-            <h2>Your items for today</h2>
-            <li>rfhu4erfhu</li>
-        </ul>
+        <div id="todo-list">
+            <h2>Your to do items for today</h2>
+            <ul>
+                <li>rfhu4erfhu</li>
+            </ul>
+        </div>
+
     </section>
 
 
@@ -37,7 +42,6 @@
     <footer>
         <h1>Good luck with your day :)</h1>
     </footer>
-
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

@@ -15,7 +15,7 @@ body {
     grid-template-columns: 1fr;
     grid-template-areas: "header"
             "nav"
-    "section"
+            "section"
             "footer";
 }
 
@@ -49,12 +49,28 @@ nav {
 #todo-form {
     grid-column: 1/2;
     width:100%;
+    padding: 5px 15px 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3)
+}
+
+input {
+    font-family: 'Montserrat', sans-serif;
+}
+
+textarea {
+    font-family: 'Montserrat', sans-serif;
+    width:99%;
+    max-width:99%;
+    max-height:40%;
+    resize:vertical;
 }
 
 #todo-list {
     grid-column: 2/3;
     width:100%;
     margin: 0;
+    padding: 5px 15px;
     border-radius: 10px;
     box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3)
 }
