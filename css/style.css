@@ -39,15 +39,15 @@ nav {
 .section-container {
     grid-area: section;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: flex-start;
     flex-wrap: wrap;
-    padding: 0 4px;
+    padding: 1% 5%;
 }
 
 #todo-form {
     flex: 50%;
-    max-width: 50%;
+    max-width: 48%;
     padding: 5px 15px 15px;
     border-radius: 10px;
     box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3)
@@ -66,10 +66,8 @@ textarea {
 }
 
 #todo-list {
-    /*grid-column: 2/3;*/
-    /*width:100%;*/
     flex: 50%;
-    max-width: 50%;
+    max-width: 48%;
     margin: 0;
     padding: 5px 15px;
     border-radius: 10px;
