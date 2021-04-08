@@ -40,12 +40,14 @@
             <ul>
                 <li
                         is="todo-item"
+                        :style="{textDecoration: todo.styling.textDecoration}"
                         v-for="(todo, index) in todos"
                         :key="todo.id"
                         :name="todo.name"
                         :date="todo.date"
                         :complete="todo.complete"
-                        @completed="todo.complete = true"
+                        @completed="todo.complete = true; todo.styling.textDecoration = 'line-through'"
+                        @undo="todo.complete = false; todo.styling.textDecoration = 'none'"
                         @remove="todos.splice(index, 1)"
                 ></li>
             </ul>
