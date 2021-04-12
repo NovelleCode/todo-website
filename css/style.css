@@ -27,6 +27,7 @@ header {
 }
 
 h1 {
+    font-size: 28px;
     color: white;
     text-shadow: 6px 6px 6px rgba(0,0,0,0.2);
 }
@@ -35,16 +36,16 @@ h1 {
 .section-container {
     grid-area: section;
     display: flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    padding: 1% 5%;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 2%;
 }
 
 #todo-form {
     flex: 50%;
-    max-width: 48%;
+    max-width: 100%;
     padding: 0 15px 15px;
+    margin-top: 10px;
     border-radius: 10px;
     box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3)
 }
@@ -69,11 +70,9 @@ textarea {
     padding: 6px 10px;
 }
 
-
-
 #todo-list {
     flex: 50%;
-    max-width: 48%;
+    max-width: 100%;
     padding: 0 15px 15px;
     border-radius: 10px;
     box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3)
@@ -113,3 +112,37 @@ footer {
     display: flex;
     justify-content: flex-end;
 }
+
+@media screen and (min-width: 740px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    .section-container {
+        grid-area: section;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding: 1% 5%;
+    }
+
+    #todo-form {
+        flex: 50%;
+        max-width: 48%;
+        padding: 0 15px 15px;
+        margin-top: 0;
+        border-radius: 10px;
+        box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3)
+    }
+
+    #todo-list {
+        flex: 50%;
+        max-width: 48%;
+        padding: 0 15px 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3)
+    }
+}
+

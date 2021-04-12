@@ -5,17 +5,17 @@ document.querySelector('#new-todo-date').setAttribute('min', today)
 
 Vue.component('todo-item', {
     template: `
-        <li>
-        <button v-if="!complete" @click="$emit('completed')">✔️</button>
-        <button v-if="complete" @click="$emit('remove')">🗑️</button>
-         {{ date }} - {{ name }}
-        <button v-if="complete" @click="$emit('undo')">undo</button>
-        </li>
-        `,
+      <li>
+      <button v-if="!complete" @click="$emit('completed')">✔️</button>
+      <button v-if="complete" @click="$emit('remove')">🗑️</button>
+      {{ date }} - {{ name }}
+      <button v-if="complete" @click="$emit('undo')">undo</button>
+      </li>
+    `,
     props: ['name', 'date', 'complete']
 })
 
-new Vue ({
+new Vue({
     el: '.grid-container',
     data: {
         todos: [
@@ -25,7 +25,8 @@ new Vue ({
                 date: '2021-07-14',
                 complete: false,
                 styling: {
-                    textDecoration: 'none'
+                    textDecoration: 'none',
+                    color: 'black'
                 }
             },
             {
@@ -34,7 +35,8 @@ new Vue ({
                 date: '2021-04-10',
                 complete: false,
                 styling: {
-                    textDecoration: 'none'
+                    textDecoration: 'none',
+                    color: 'black'
                 }
             }
         ],
@@ -44,7 +46,7 @@ new Vue ({
     },
     methods: {
         addNewTodo() {
-            if(!this.newTodoName || !this.newTodoDate) {
+            if (!this.newTodoName || !this.newTodoDate) {
                 return;
             }
             this.todos.push({
@@ -53,11 +55,16 @@ new Vue ({
                 date: this.newTodoDate,
                 complete: false,
                 styling: {
-                    textDecoration: 'none'
+                    textDecoration: 'none',
+                    color: 'black'
                 }
             })
             this.newTodoName = ''
             this.newTodoDate = ''
+        },
+        changeStyle(textDecoration, color) {
+            this.todos.styling.textDecoration = 'line-through'
+            this.todos.styling.color = 'grey'
         }
     }
 })
