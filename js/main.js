@@ -22,7 +22,7 @@ new Vue({
             {
                 id: 1,
                 name: 'Do laundry',
-                date: '2021-07-14',
+                date: '2021-04-20',
                 complete: false,
                 styling: {
                     textDecoration: 'none',
@@ -32,7 +32,7 @@ new Vue({
             {
                 id: 2,
                 name: 'Walk dog',
-                date: '2021-04-10',
+                date: '2021-07-10',
                 complete: false,
                 styling: {
                     textDecoration: 'none',
@@ -62,9 +62,10 @@ new Vue({
             this.newTodoName = ''
             this.newTodoDate = ''
         },
-        changeStyle(textDecoration, color) {
-            this.todos.styling.textDecoration = 'line-through'
-            this.todos.styling.color = 'grey'
+        sortByDate() {
+            this.todos.sort(function(a,b) {
+                return new Date(a.date) - new Date(b.date);
+            });
         }
     }
 })
