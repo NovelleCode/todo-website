@@ -11,47 +11,71 @@
 <div class="grid-container">
     <!--    header-->
     <header>
-        <h1>Hi! Here are your to dos for today</h1>
+        <h1>Hi! Here are your to dos</h1>
     </header>
 
     <!--    main-->
     <section class="section-container">
-        <form id="todo-form">
-            <h2>Enter a new to do item</h2>
+        <div class="form-container">
+            <form id="todo-form">
+                <h2>Enter a new to do item</h2>
 
-            <label for="new-todo-name">Your new to do item: </label>
-            <textarea id="new-todo-name"
-                      placeholder="New to do"
-                      v-model="newTodoName"
-            ></textarea><br>
+                <label for="new-todo-name">Your new to do item: </label>
+                <textarea id="new-todo-name"
+                          placeholder="New to do"
+                          v-model="newTodoName"
+                ></textarea><br>
 
-            <label for="new-todo-date">When do you want to be finished? </label>
-            <input type="date"
-                   id="new-todo-date"
-                   v-model="newTodoDate"
-            > <br>
+                <label for="new-todo-date">When do you want to be finished? </label>
+                <input type="date"
+                       id="new-todo-date"
+                       v-model="newTodoDate"
+                > <br>
 
-            <button id="submit" @click.prevent="addNewTodo" @click="sortByDate">Submit</button>
-        </form>
-
-        <div id="todo-list">
-            <h2>Your to do items for today</h2>
-            <ul>
-                <li
-                        is="todo-item"
-                        :style="todo.styling"
-                        v-for="(todo, index) in todos"
-                        :key="todo.id"
-                        :name="todo.name"
-                        :date="todo.date"
-                        :complete="todo.complete"
-                        @completed="todo.complete = true; todo.styling.textDecoration = 'line-through'"
-                        @undo="todo.complete = false; todo.styling.textDecoration = 'none'"
-                        @remove="todos.splice(index, 1)"
-                ></li>
-            </ul>
+                <button id="submit" @click.prevent="addNewTodo" @click="sortByDate">Submit</button>
+            </form>
         </div>
 
+
+        <div class="list-container">
+            <div class="todo-list" id="todo-today">
+                <h2>Your to do items for today</h2>
+                <ul>
+                    <li
+                            is="todo-item-today"
+                            :style="todo.styling"
+                            v-for="(todo, index) in todos"
+                            :key="todo.id"
+                            :name="todo.name"
+                            :date="todo.date"
+                            :today="todo.today"
+                            :complete="todo.complete"
+                            @completed="todo.complete = true; todo.styling.textDecoration = 'line-through'"
+                            @undo="todo.complete = false; todo.styling.textDecoration = 'none'"
+                            @remove="todos.splice(index, 1)"
+                    ></li>
+                </ul>
+            </div>
+
+            <div class="todo-list" id="todo-later">
+                <h2>Your to do items for later</h2>
+                <ul>
+                    <li
+                            is="todo-item-later"
+                            :style="todo.styling"
+                            v-for="(todo, index) in todos"
+                            :key="todo.id"
+                            :name="todo.name"
+                            :date="todo.date"
+                            :today="todo.today"
+                            :complete="todo.complete"
+                            @completed="todo.complete = true; todo.styling.textDecoration = 'line-through'"
+                            @undo="todo.complete = false; todo.styling.textDecoration = 'none'"
+                            @remove="todos.splice(index, 1)"
+                    ></li>
+                </ul>
+            </div>
+        </div>
     </section>
 
 
