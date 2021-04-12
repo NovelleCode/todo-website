@@ -39,7 +39,7 @@
             <ul>
                 <li
                         is="todo-item"
-                        :style="{textDecoration: todo.styling.textDecoration}"
+                        :style="todo.styling"
                         v-for="(todo, index) in todos"
                         :key="todo.id"
                         :name="todo.name"
