@@ -44,12 +44,6 @@ h2 {
     padding: 0 2%;
 }
 
-.form-container {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-}
-
 #todo-form {
     align-self: flex-start;
     flex: 50%;
