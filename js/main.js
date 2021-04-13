@@ -3,21 +3,9 @@ let todayDatepicker = new Date().toISOString().split('T')[0];
 document.querySelector('#new-todo-date').setAttribute('min', todayDatepicker)
 
 
-Vue.component('todo-item-today', {
+Vue.component('todo-item', {
     template: `
-      <li v-if="today">
-      <button v-if="!complete" @click="$emit('completed')">✔️</button>
-      <button v-if="complete" @click="$emit('remove')">🗑️</button>
-      {{ date }} - {{ name }}
-      <button v-if="complete" @click="$emit('undo')">undo</button>
-      </li>
-    `,
-    props: ['name', 'date', 'complete', 'today']
-})
-
-Vue.component('todo-item-later', {
-    template: `
-      <li v-if="!today">
+      <li>
       <button v-if="!complete" @click="$emit('completed')">✔️</button>
       <button v-if="complete" @click="$emit('remove')">🗑️</button>
       {{ date }} - {{ name }}
@@ -38,8 +26,7 @@ new Vue({
                 today: true,
                 complete: false,
                 styling: {
-                    textDecoration: 'none',
-                    color: 'black'
+                    textDecoration: 'none'
                 }
             },
             {
@@ -49,14 +36,14 @@ new Vue({
                 today: false,
                 complete: false,
                 styling: {
-                    textDecoration: 'none',
-                    color: 'black'
+                    textDecoration: 'none'
                 }
             }
         ],
         newTodoName: null,
         newTodoDate: null,
-        newTodoId: 3
+        newTodoId: 3,
+        name: 'Karen'
     },
     methods: {
         addNewTodo() {
@@ -70,8 +57,7 @@ new Vue({
                 today: this.isItToday(this.newTodoDate),
                 complete: false,
                 styling: {
-                    textDecoration: 'none',
-                    color: 'black'
+                    textDecoration: 'none'
                 }
             })
             this.newTodoName = ''
