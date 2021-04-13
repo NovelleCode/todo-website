@@ -36,10 +36,6 @@ h2 {
     font-size: 22px;
 }
 
-
-
-
-
 .section-container {
     grid-area: section;
     display: flex;
@@ -54,12 +50,21 @@ h2 {
     flex-direction: column;
 }
 
-#todo-form, #user-form {
+#todo-form {
     align-self: flex-start;
     flex: 50%;
     width: 100%;
     padding: 0 15px 15px;
     margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3)
+}
+
+#user-form {
+    display: inline-table;
+    width: 100%;
+    padding: 15px 15px 15px;
+    margin: 15px 0 10px;
     border-radius: 10px;
     box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3)
 }
@@ -124,8 +129,6 @@ button:hover {
 }
 
 footer {
-    position: absolute;
-    bottom:0;
     width:100%;
     grid-area: footer;
     background-color: #e99295;
@@ -183,6 +186,11 @@ footer {
         margin-bottom: 15px;
         border-radius: 10px;
         box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3)
+    }
+
+    footer {
+        position: absolute;
+        bottom:0;
     }
 }
 
