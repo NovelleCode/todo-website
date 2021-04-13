@@ -76,6 +76,7 @@ new Vue({
                 return;
             }
             this.name = this.newName;
+            this.newName = '';
         },
     }
 })
