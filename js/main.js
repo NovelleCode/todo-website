@@ -8,11 +8,11 @@ Vue.component('todo-item', {
       <li>
       <button v-if="!complete" @click="$emit('completed')">✔️</button>
       <button v-if="complete" @click="$emit('remove')">🗑️</button>
-      {{ date }} - {{ name }}
+      {{ title }}
       <button v-if="complete" @click="$emit('undo')">undo</button>
       </li>
     `,
-    props: ['name', 'date', 'complete', 'today']
+    props: ['title', 'complete', 'today']
 })
 
 new Vue({
