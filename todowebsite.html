@@ -32,8 +32,18 @@
                        v-model="newTodoDate"
                 > <br>
 
-                <button id="submit" @click.prevent="addNewTodo" @click="sortByDate">Submit</button>
+                <button class="submit" @click.prevent="addNewTodo" @click="sortByDate">Submit</button>
             </form>
+
+            <form id="user-form">
+                <label for="name">Enter new username:  </label>
+                <input type="text"
+                       id="name"
+                       v-model="newName"
+                       placeholder="Name">
+                <button class="submit" @click.prevent="addNewName">Submit</button>
+            </form>
+
         </div>
 
 
@@ -47,7 +57,7 @@
                             v-for="(todo, index) in todos"
                             v-if="todo.today"
                             :key="todo.id"
-                            :title="todo.date + ' '+ todo.name"
+                            :title="todo.date + ' ' + todo.name"
                             :today="todo.today"
                             :complete="todo.complete"
                             @completed="todo.complete = true; todo.styling.textDecoration = 'line-through'"

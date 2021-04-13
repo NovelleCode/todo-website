@@ -37,6 +37,9 @@ h2 {
 }
 
 
+
+
+
 .section-container {
     grid-area: section;
     display: flex;
@@ -48,11 +51,13 @@ h2 {
 .form-container {
     display: flex;
     align-items: flex-start;
+    flex-direction: column;
 }
 
-#todo-form {
+#todo-form, #user-form {
+    align-self: flex-start;
     flex: 50%;
-    max-width: 100%;
+    width: 100%;
     padding: 0 15px 15px;
     margin-top: 10px;
     border-radius: 10px;
@@ -75,7 +80,7 @@ textarea {
 }
 
 
-#submit {
+.submit {
     font-family: 'Montserrat', sans-serif;
     padding: 6px 10px;
 }
@@ -147,8 +152,21 @@ footer {
     }
 
     #todo-form {
+        display: inline-table;
+        width: 100%;
         padding: 0 15px 15px;
         margin-top: 0;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3)
+    }
+
+    #user-form {
+        display: inline-table;
+        width: 100%;
+        padding: 15px 15px 15px;
+        margin-top: 0;
+        margin-bottom: 15px;
         border-radius: 10px;
         box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3)
     }

@@ -43,7 +43,8 @@ new Vue({
         newTodoName: null,
         newTodoDate: null,
         newTodoId: 3,
-        name: 'Karen'
+        name: 'Karen',
+        newName: '',
     },
     methods: {
         addNewTodo() {
@@ -69,6 +70,12 @@ new Vue({
         isItToday(date) {
             let today = new Date().toISOString().split('T')[0];
             return date === today;
-        }
+        },
+        addNewName() {
+            if(!this.newName) {
+                return;
+            }
+            this.name = this.newName;
+        },
     }
 })
